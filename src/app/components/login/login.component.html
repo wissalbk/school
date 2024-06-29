@@ -1,0 +1,62 @@
+<div class="register" style="margin: 100px;">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Register Form -->
+
+            <div class="col-lg-6 " style="margin-left: 230px;" >
+                <div class="register_form_container">
+                    <div class="register_form_title">Login</div>
+                    <form action="#" id="register_form" class="register_form" [formGroup]="loginForm">
+                        <div class="row register_row">
+                        
+                            <div class="col-lg-12 register_col">
+                                <input type="tel" class="form_input" placeholder="Phone" formControlName="tel" >
+                            </div>
+                            <div *ngIf="loginForm.controls['tel'].invalid &&
+                            loginForm.controls['tel'].touched ||
+                            loginForm.controls['tel'].dirty">
+                            <div *ngIf="loginForm.controls['tel'].errors?.['required']" style="color: violet;">
+                              Tel is required
+                            </div>
+                            <div *ngIf="loginForm.controls['tel'].errors?.['minlength']" style="color: violet;">
+                              Tel Have at least 4 chars
+                            </div>
+                            <div *ngIf="loginForm.controls['tel'].errors?.['maxlength']" style="color: violet;">
+                              Tel must have at most 8 chars
+                            </div>
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="password" class="form_input" placeholder="Password" formControlName="pwd" >
+                            </div>
+                            <div *ngIf="loginForm.controls['pwd'].invalid &&
+                            loginForm.controls['pwd'].touched ||
+                            loginForm.controls['pwd'].dirty">
+                            <div *ngIf="loginForm.controls['pwd'].errors?.['required']" style="color: violet;">
+                              Password is required
+                            </div>
+                            <div *ngIf="loginForm.controls['pwd'].errors?.['minlength']" style="color: violet;">
+                                Password must Have at least 4 chars
+                            </div>
+                            <div *ngIf="loginForm.controls['pwd'].errors?.['maxlength']" style="color: violet;">
+                                Password must have at most 8 chars
+                            </div>
+                            </div>  
+                            <div class="col">
+                                <button type="submit" class="form_button trans_200" [disabled]="loginForm.invalid" (click)="login()" >Login</button>
+                            </div>
+                          
+                        </div>
+                        <div >
+                          <p style="color:blueviolet ;">{{msg}}</p>  
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Timer -->
+
+           
+        </div>
+    </div>
+</div>

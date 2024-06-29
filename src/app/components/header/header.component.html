@@ -1,0 +1,156 @@
+<header class="header">
+
+    <!-- Top Bar -->
+    <div class="top_bar">
+        <div class="top_bar_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="top_bar_right ml-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Content -->
+    <div class="header_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container mr-auto">
+                            <a href="#">
+                                <div class="logo_text">Lingua</div>
+                            </a>
+                        </div>
+                        <nav class="main_nav_contaner">
+                            <ul class="main_nav">
+                                <li class="active"><a routerLink="">Home</a></li>
+                                <li><a routerLink="courses">Courses</a></li>
+                                <li><a routerLink="teachers">Teachers</a></li>
+                                <!-- <li><a routerLink="events">Events</a></li>
+                                <li><a routerLink="blog">Blog</a></li> -->
+                                <li *ngIf="!isloggedIn()"><a routerLink="signupParent" >signupParent</a></li>
+                                <li *ngIf="!isloggedIn()"><a routerLink="signupStudent">signupStudent</a></li>
+                                <li *ngIf="!isloggedIn()"><a routerLink="signupAdmin">signupAdmin</a></li>
+                                <li *ngIf="!isloggedIn()"><a routerLink="signupTeacher">signupTeacher</a></li>
+                                <li *ngIf="isloggedIn() && user.role =='teacher'"><a routerLink="addCours">AddCours</a></li>
+                                <li *ngIf="isloggedIn() && user.role =='teacher'"><a [routerLink]="['/evaluation',user.id]">Evaluation</a></li>
+
+                                <li *ngIf="isloggedIn() && user.role =='admin'" ><a routerLink="addclass">AddClass</a></li>
+                                <li *ngIf="isloggedIn() && user.role =='teacher'"><a [routerLink]="['/spaceTeacher',user.id]">Space Teachers</a></li>
+                                <li *ngIf="isloggedIn()" ><a routerLink="searchTeacher">Search Teacher</a></li>
+                                <li *ngIf="isloggedIn() && user.role =='admin'" ><a routerLink="admin">Admin</a></li>
+
+                                <li *ngIf="isloggedIn() && user.role =='student'" ><a  [routerLink]="['/spaceStudent', user.id]">Space Students</a></li>
+                                <li *ngIf="isloggedIn() && user.role =='parent'" ><a routerLink="spaceParent">Space Parent</a></li>
+
+                                <li *ngIf="!isloggedIn()"><button routerLink="login" class="btn" style="background-color:  #2e21df; color: #ffffff;">LogIn</button></li>
+                                <li *ngIf="isloggedIn()">
+                                    <a class="nav-link" routerLink="editUser" style="color:  #2e21df;">{{user.firstName}} {{user.lastName}}
+                                        <img [src]="user.fileUser" alt="" width="40px" style="border-radius: 90%;">
+                                    </a>
+                                   
+                                  </li>
+                                  <li *ngIf="isloggedIn()"><button (click)="logOut()" class="btn" style="background-color: #2e21df ;"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></button></li>  
+
+                            </ul>                      
+                        </nav>
+                        
+                        <!-- <div class="header_content_right ml-auto text-right">
+                           
+                            <div class="header_search">
+                                <div class="search_form_container">
+                                    <form action="#" id="search_form" class="search_form trans_400">
+                                        <input type="search" class="header_search_input trans_400"
+                                            placeholder="Type for Search" required="required">
+                                        <div class="search_button">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> 
+
+                        
+                        
+                            <div class=""><a href="#"></a></div>
+                            <div class="hamburger menu_mm">
+                                <i class="fa fa-bars menu_mm" aria-hidden="true">
+                    
+                                </i>
+                            
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- Menu -->
+
+<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+    <div class="menu_close_container">
+        <div class="menu_close">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- <div class="search">
+        <form action="#" class="header_search_form menu_mm">
+            <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+            <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div> -->
+    <nav class="menu_nav">
+        <ul class="menu_mm">
+            <li class="active"><a routerLink="">Home</a></li>
+            <li><a routerLink="courses">Courses</a></li>
+            <li><a routerLink="teachers">Teachers</a></li>
+            <li><a routerLink="events">Events</a></li>
+            <li><a routerLink="blog">Blog</a></li>
+            <li *ngIf="!isloggedIn()"><a routerLink="signupParent" >signupParent</a></li>
+            <li *ngIf="!isloggedIn()"><a routerLink="signupStudent">signupStudent</a></li>
+            <li *ngIf="!isloggedIn()"><a routerLink="signupAdmin">signupAdmin</a></li>
+            <li *ngIf="!isloggedIn()"><a routerLink="signupTeacher">signupTeacher</a></li>
+            <li *ngIf="isloggedIn() && user.role =='teacher'"><a routerLink="addCours">AddCours</a></li>
+            <li *ngIf="isloggedIn() && user.role =='admin'" ><a routerLink="addclass">AddClass</a></li>
+            <li *ngIf="isloggedIn() && user.role =='teacher'"><a routerLink="spaceTeacher">Space Teachers</a></li>
+            <li *ngIf="isloggedIn() && user.role =='admin'" ><a routerLink="admin">Admin</a></li>
+            <li *ngIf="!isloggedIn()"><button routerLink="login" class="btn" style="background-color:  #2e21df; color: #ffffff;">LogIn</button></li>
+            <li *ngIf="isloggedIn()">
+                <a class="nav-link" routerLink="profile">{{user.firstName}} {{user.lastName}} </a>
+                <img [src]="user.fileUser" alt="" width="40px" style="border-radius: 70%;">
+              </li>
+              <li *ngIf="isloggedIn()"><button (click)="logOut()" class="btn" style="background-color: #2e21df ;"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></button></li>  
+
+           
+           
+           
+                                   
+        </ul>
+       
+    </nav>
+    <div class="menu_extra">
+        <div class="menu_phone"><span class="menu_title"></span></div>
+        <div class="menu_social">
+            <span class="menu_title"></span>
+            <!-- <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            </ul> -->
+        </div>
+    </div>
+</div>
+
+

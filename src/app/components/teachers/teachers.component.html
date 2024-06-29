@@ -1,0 +1,24 @@
+<div class="instructors">
+    <div class="instructors_background" style="background-image:url(assets/images/instructors_background.png)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin-top: 60px;">
+                <h2 class="section_title text-center">Teachers</h2>
+            </div>
+        </div>
+        <div class="row instructors_row">
+
+            <!-- Instructor -->
+            <div class="col-lg-4 instructor_col" *ngFor="let Teacher of teacherTab">
+             <app-teacher [obj]="Teacher"></app-teacher>
+            </div>
+
+            <!-- Instructor -->
+          
+
+            <!-- Instructor -->
+          
+
+        </div>
+    </div>
+</div>

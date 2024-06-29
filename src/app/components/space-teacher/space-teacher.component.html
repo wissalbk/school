@@ -1,0 +1,27 @@
+
+<div class="events" style="margin-top: 150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="section_title text-center">Teacher Dashboard</h2>
+            </div>
+        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Classe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cour</a>
+          </li>
+        
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <app-dashboard-teacher></app-dashboard-teacher>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <app-dashboard-cour-teacher></app-dashboard-cour-teacher>
+          </div>
+        </div>
+    </div>
+</div>

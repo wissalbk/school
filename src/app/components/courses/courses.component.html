@@ -1,0 +1,20 @@
+<div class="courses" style="margin: 200px;">
+    <div class="courses_background"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="section_title text-center">Popular Online Courses</h2>
+            </div>
+        </div>
+        <div class="row courses_row">
+
+            <!-- Course -->
+         
+            <div class="col-lg-4 course_col" *ngFor="let course of courseTab">
+                <app-course [obj]="course"></app-course>
+               
+            </div>
+
+        </div>
+    </div>
+</div>

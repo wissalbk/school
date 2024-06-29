@@ -1,0 +1,34 @@
+<table class="table" style="color: black">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Course Description</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let cour of myCourseTab" >
+        <!-- <td><img [src]="user.fileUser" alt="" width="100px" style="border-radius: 90%;"></td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{myCourseTab.tel}}</td> -->
+        <td>{{cour.coursID.name }}</td>
+        <td> {{cour.coursID.description}}</td>
+        <td>{{cour.coursID.duration }}</td>
+
+
+        <!-- <td *ngFor="let userObj of myCourseTab">
+            {{userObj.classId.name}}
+        </td> -->
+     
+        <!-- <td>
+          <button type="submit" class="btn btn-light" (click)="display()"><i class="fa-solid fa-eye" style="color: #26a269;" ></i></button>
+          <button type="submit" class="btn btn-light" (click)="deleteCourse()"><i class="fa-solid fa-user-slash" style="color: #d63317;"></i></button>
+          <button type="submit" class="btn btn-light" (click)="edit()" ><i class="fa-regular fa-pen-to-square" style="color: #26a269;;"></i></button>
+        </td> -->
+      </tr>
+     
+    </tbody>
+  </table>
+  
+
+

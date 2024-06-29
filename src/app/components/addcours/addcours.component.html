@@ -1,0 +1,43 @@
+<div class="register" style="margin:100px;">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Register Form -->
+
+            <div class="col-lg-6"  style="margin-left: 230px;">
+                <div class="register_form_container">
+                    <div class="register_form_title">Add Cours</div>
+                    <form action="#"  class="register_form" #coursForm="ngForm" (ngSubmit)="addCours()">
+                        <div class="row register_row">
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="Name Cours" [(ngModel)]="cours.name" [ngModelOptions]="{ standalone: true }" >
+                            </div>
+                         
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="description" [(ngModel)]="cours.description" [ngModelOptions]="{ standalone: true }">
+                            </div>
+                          
+                            <div class="col-lg-12 register_col">
+                                <input type="email" class="form_input" placeholder="Duration" [(ngModel)]="cours.duration" [ngModelOptions]="{ standalone: true }">
+                            </div>
+                            <!-- <div class="col-lg-12 register_col" (change)="selectTeacherId($event)" >
+                                <select>
+                                    <option style="color: black;" selected>Select Teacher</option>
+                                     <option style="color: black;" ></option>
+                                </select>
+                            </div> -->
+                            <div class="col">
+                                <button type="submit" class="form_button trans_200"  >ADD Cours</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Timer -->
+
+        
+        </div>
+    </div>
+</div>
+

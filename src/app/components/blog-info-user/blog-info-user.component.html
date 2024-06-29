@@ -1,0 +1,32 @@
+
+<div class="blog" style="margin-top: 150px;">
+    <div class="container">
+        <div class="row row-lg-eq-height">
+            
+            <!-- Blog Left -->
+            <div class="col-lg-6">
+                <div class="blog_left">
+                    <div class="blog_title"> {{obj.firstName}} {{obj.lastName}}</div>
+                    <div class="blog_text">
+                        <i class="fa-solid fa-phone-volume"> {{obj.tel}}</i> 
+                            
+                    </div>
+                    <div class="blog_categories">
+                        <i class="fa-solid fa-envelope"> {{obj.email}}</i>   
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Right -->
+
+            <div class="col-lg-6">
+                <div class="blog_right">
+                    <div >
+                        <img [src]="obj.fileUser" width="400px">
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="register" style="margin:50px;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Register Form -->
+
+            <div class="col-lg-6" style="margin-left: 230px;">
+                <div class="register_form_container">
+                    <div class="register_form_title" style="color: blue;">Search </div>
+                    <form action="#" class="register_form"  (ngSubmit)="searchTeacher()">
+                        <div class="row register_row">
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" id="speciality" name="speciality"
+                                    placeholder="Teacher Speciality" [(ngModel)]="searchForm.speciality" required>
+                            </div>
+                            <!-- <div *ngIf="searchForm.controls['speciality'].invalid && 
+                            (searchForm.controls['speciality'].touched || searchForm.controls['speciality'].dirty)">
+                                spéciality required
+                            </div> -->
+                            <div class="col">
+                                <button type="submit" class="form_button trans_200">Search</button>
+                            </div>
+
+                        </div>
+                       
+                      
+                    </form>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 instructor_col" *ngFor="let teacher of teachers">
+                        <app-result-search [obj]="teacher"></app-result-search>
+                    </div>
+                </div>
+             
+            </div>
+           
+            <!-- Register Timer -->
+
+
+        </div>
+    </div>
+</div>

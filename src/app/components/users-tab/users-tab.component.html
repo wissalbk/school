@@ -1,0 +1,30 @@
+<table class="table" style="color: black">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name User</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Role</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersTab">
+        <td> <img [src]="user.fileUser" alt="" width="40px" style="border-radius: 70%;"></td>
+        <td scope="row">{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.tel}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.statut}}</td>
+        <td>
+          <button type="submit" class="btn btn-light" (click)="display(user._id)"><i class="fa-solid fa-eye" style="color: #26a269;" ></i></button>
+          <button type="submit" class="btn btn-light" (click)="deleteUser(user._id)"><i class="fa-solid fa-user-slash" style="color: #d63317;"></i></button>
+          <button type="submit" *ngIf="user.role== 'teacher'" class="btn btn-light" (click)="valider(user._id,user.statut)" ><i class="fa-solid fa-check-double" style="color: #26a269;"></i></button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  

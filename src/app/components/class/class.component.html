@@ -1,0 +1,55 @@
+<div class="register" style="margin:100px;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Register Form -->
+
+            <div class="col-lg-6" style="margin-left: 230px;">
+                <div class="register_form_container">
+                    <div class="register_form_title">Add Classe</div>
+                    <form action="#" class="register_form" #coursForm="ngForm" (ngSubmit)="addClass()">
+                        <div class="row register_row">
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="Name Class" [(ngModel)]="class.name"
+                                    [ngModelOptions]="{ standalone: true }">
+                            </div>
+                            <div class="col-lg-12 register_col ">
+                                <select class="custom-select col-lg-12" (change)="selectTeacherId($event)">
+                                    <option style="color: black;" selected>Select Teacher</option>
+                                    <option [value]='teacher._id' style="color: black;"
+                                        *ngFor="let teacher of teachersTab">
+                                        {{teacher.firstName}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 register_col">
+                                <select class="custom-select col-lg-12" (change)="selectCoursId($event)">
+                                    <option style="color: black;" selected>Select Cours</option>
+                                    <option [value]="cours._id" style="color: black;" *ngFor="let cours of coursesTab">
+                                        {{cours.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 register_col" (change)="selectStudentId($event)">
+
+
+                                <div *ngFor="let student of studentsTab">
+                                    {{student.firstName}} {{student.firstName}} <input type="checkbox" [value]="student._id" name="" id="">
+
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="form_button trans_200">ADD Class</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Timer -->
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<table class="table" style="color: black">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name Cour</th>
+        <th scope="col">Description</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cour of myCourseTab">
+        <td>{{cour.name}}</td>
+        <td>{{cour.description}}</td>
+        <td>{{cour.duration}}</td>
+       
+     
+        <td>
+          <button type="submit" class="btn btn-light" (click)="deleteCourse(cour._id)"><i class="fa-solid fa-user-slash" style="color: #d63317;"></i></button>
+          <button type="submit" class="btn btn-light" (click)="edit(cour._id)" ><i class="fa-regular fa-pen-to-square" style="color: #26a269;;"></i></button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  
+
+

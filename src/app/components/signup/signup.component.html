@@ -1,0 +1,133 @@
+<div class="register" style="margin:100px;">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Register Form -->
+
+            <div class="col-lg-6" style="margin-left: 230px;">
+                <div class="register_form_container">
+                    <div class="register_form_title" style="color: blue;">{{title}}</div>
+                    <form action="#"  class="register_form" [formGroup]="signupForm">
+                        <div class="row register_row">
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="FirstName" formControlName="firstName">
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].invalid &&
+                            signupForm.controls['firstName'].touched ||
+                            signupForm.controls['firstName'].dirty">
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['required']" style="color: violet;">
+                              FirstName is required
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']" style="color: violet;">
+                                FirstName must Have at least 4 chars
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['maxlength']" style="color: violet;">
+                                FirstName must have at most 8 chars
+                            </div>
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="LastName" formControlName="lastName">
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].invalid &&
+                            signupForm.controls['lastName'].touched ||
+                            signupForm.controls['lastName'].dirty">
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['required']" style="color: violet;">
+                              LastName is required
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']" style="color: violet;">
+                              LastName must Have at least 4 chars
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['maxlength']" style="color: violet;">
+                              LastName must have at most 8 chars
+                            </div>
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="email" class="form_input" placeholder="Email" formControlName="email">
+                            </div>
+                            <div *ngIf="signupForm.controls['email'].invalid &&
+                            signupForm.controls['email'].touched ||
+                            signupForm.controls['email'].dirty">
+                            <div *ngIf="signupForm.controls['email'].errors?.['required']" style="color: violet;">
+                              Email is required
+                            </div>  
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="tel" class="form_input" placeholder="Phone" formControlName="tel">
+                            </div>
+                            <div *ngIf="signupForm.controls['tel'].invalid &&
+                            signupForm.controls['tel'].touched ||
+                            signupForm.controls['tel'].dirty">
+                            <div *ngIf="signupForm.controls['tel'].errors?.['required']" style="color: violet;">
+                              Tel is required
+                            </div>
+                            <div *ngIf="signupForm.controls['tel'].errors?.['minlength']" style="color: violet;">
+                              Tel must Have at least 4 chars
+                            </div>
+                            <div *ngIf="signupForm.controls['tel'].errors?.['maxlength']" style="color: violet;"> 
+                              Tel must have at most 8 chars
+                            </div>
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="text" class="form_input" placeholder="Adresse" formControlName="adresse">
+                            </div>
+                            <div *ngIf="signupForm.controls['adresse'].invalid &&
+                            signupForm.controls['adresse'].touched ||
+                            signupForm.controls['adresse'].dirty">
+                            <div *ngIf="signupForm.controls['adresse'].errors?.['required']" style="color: violet;">
+                              Adresse is required
+                            </div>                        
+                            </div>  
+                            <div class="col-lg-12 register_col">
+                                <input type="password" class="form_input" placeholder="Password" formControlName="pwd">
+                            </div>
+                            <div *ngIf="signupForm.controls['pwd'].invalid &&
+                            signupForm.controls['pwd'].touched ||
+                            signupForm.controls['pwd'].dirty">
+                            <div *ngIf="signupForm.controls['pwd'].errors?.['required']" style="color: violet;">
+                              Password is required
+                            </div>
+                            <div *ngIf="signupForm.controls['pwd'].errors?.['minlength']" style="color: violet;">
+                                Password must Have at least 4 chars
+                            </div>
+                            <div *ngIf="signupForm.controls['pwd'].errors?.['maxlength']" style="color: violet;">
+                                Password must have at most 8 chars
+                            </div>
+                            </div>  
+                          
+                            <div class="col-lg-12 register_col" *ngIf="checkParent()">
+                                <input type="tel" class="form_input" placeholder="Phone Child" formControlName="phoneChild"  >
+                            </div>
+                            <div class="col-lg-12 register_col" *ngIf="checkTeacher()">
+                                <input type="text" class="form_input" placeholder="speciality" formControlName="speciality" >
+
+                            </div>
+                            <div class="col-lg-12 " style="visibility: hidden;" >
+                                <input type="file" class="form_input"  #filePicker (change)="onImageSelected($event)" >
+                            </div>
+                            <div class="text-center col-lg-12" style="margin-bottom: 40px;">
+                                <button class="btn btn-success" (click)="filePicker.click()">Select your Avatar</button>
+                                <br>
+                                <img [src]="imagePreview" alt="" width="300px">
+                            </div>
+                            <div class="col">
+                                <input type="submit" class="form_button trans_200"  [disabled]="signupForm.invalid" (click)="signup()" style="margin-bottom: 10px;" value="SignUp">
+                            </div>
+                            <div class="col-lg-12" >
+                                <a (click)="routeLOgin()" style="color: blue;margin: 20px;text-decoration: underline;">Do You have an account</a>
+                            </div>
+                           
+                          <div style="color: red;">
+                            {{messageErr}}
+                          </div>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Timer -->
+
+        
+        </div>
+    </div>
+</div>

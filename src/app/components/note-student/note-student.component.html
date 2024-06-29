@@ -1,0 +1,36 @@
+<table class="table" style="color: black">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Teacher Name </th>
+        <th scope="col">Teacher Email</th>
+        <th scope="col">Note </th>
+        <th scope="col">Evaluation </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let student of noteTab" >
+        <td>{{student.courId.name }}</td>
+        <td>{{student.teacherId.firstName}} {{student.teacherId.lastName}}</td>
+        <td>{{ student.teacherId.email }}</td> 
+        <td>{{student.note }}</td>
+        <td style="color: red;">{{checkNote(student.note) }}</td>
+
+        <!-- <td *ngFor="let userObj of myCourseTab">
+            {{userObj.classId.name}}
+        </td> -->
+     
+        <!-- <td>
+          <button type="submit" class="btn btn-light" (click)="display()"><i class="fa-solid fa-eye" style="color: #26a269;" ></i></button>
+          <button type="submit" class="btn btn-light" (click)="deleteCourse()"><i class="fa-solid fa-user-slash" style="color: #d63317;"></i></button>
+          <button type="submit" class="btn btn-light" (click)="edit()" ><i class="fa-regular fa-pen-to-square" style="color: #26a269;;"></i></button>
+        </td> -->
+      </tr>
+     
+    </tbody>
+  </table>
+  
+
+
+
